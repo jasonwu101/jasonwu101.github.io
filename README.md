@@ -47,7 +47,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         button:hover {
@@ -59,7 +59,7 @@
         }
 
         .scroll-container {
-            margin-top: 15rem;
+            margin-top: 13rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
@@ -106,7 +106,7 @@
         <p>Below are 21 questions and the first letter of each answer is one part of the password:</p>
         <ol>
             <li>What is my favorite animal?</li>
-            <li>Who wrote "To Kill a Mockingbird"?</li>
+            <li>Monkey?</li>
             <li>What is the chemical symbol for Gold?</li>
             <li>Which planet is known as the Red Planet?</li>
             <li>What is the largest mammal in the world?</li>
