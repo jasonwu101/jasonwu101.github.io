@@ -59,7 +59,7 @@
         }
 
         .scroll-container {
-            margin-top: 7rem;
+            margin-top: 17rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
@@ -105,7 +105,7 @@
         <h2>The password is 21 characters</h2>
         <p>Below are 21 questions and the first letter of each answer is one part of the password:</p>
         <ol>
-            <li>What is the capital of France?</li>
+            <li>What is my favorite animal?</li>
             <li>Who wrote "To Kill a Mockingbird"?</li>
             <li>What is the chemical symbol for Gold?</li>
             <li>Which planet is known as the Red Planet?</li>
