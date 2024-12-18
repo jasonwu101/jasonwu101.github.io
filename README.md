@@ -47,7 +47,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         button:hover {
@@ -103,34 +103,34 @@
     <!-- Scrollable Section with Questions -->
     <div class="scroll-container hidden" id="questions-section">
         <h2>The password is 21 characters</h2>
-        <p>Below are 21 questions and the first letter of each answer is one part of the password:</p>
+        <p>Below are 21 questions and the first letter of each answer is one part of the password in alphabetical order. </p>
         <ol>
-            <li>What is my favorite animal?</li>
-            <li>Monkey?</li>
-            <li>What is the chemical symbol for Gold?</li>
-            <li>Which planet is known as the Red Planet?</li>
-            <li>What is the largest mammal in the world?</li>
-            <li>What language is primarily spoken in Brazil?</li>
-            <li>Who painted the Mona Lisa?</li>
-            <li>What is the currency of Japan?</li>
-            <li>What is the boiling point of water in Celsius?</li>
-            <li>Which animal is known as the King of the Jungle?</li>
-            <li>What is the smallest prime number?</li>
-            <li>Who discovered gravity?</li>
-            <li>What is the name of the largest ocean?</li>
-            <li>What is the square root of 144?</li>
-            <li>Which country is known as the Land of the Rising Sun?</li>
-            <li>What is the fastest land animal?</li>
-            <li>Who is the author of the Harry Potter series?</li>
-            <li>Which gas do plants primarily take in during photosynthesis?</li>
-            <li>What is the hardest natural substance?</li>
-            <li>What is the main ingredient in guacamole?</li>
-            <li>Which bird is known for its impressive mimicry skills?</li>
+            <li>If someone buys 10 BTC at once they are called a ___ ?</li>
+            <li>What animal do most people think of when they hear Australia?</li>
+            <li>Which Fortnite Season did I start playing?</li>
+            <li>This state has a lot of hurricanes.</li>
+            <li>777 is a ____ number.</li>
+            <li>A diet where you eat poultry and not consume red meat or pork.</li>
+            <li>An app where you can buy stocks (hint: feather).</li>
+            <li>Which NFT was once worth more than 1 BTC?</li>
+            <li>Used to be called Twitter.</li>
+            <li>What is your dad’s favorite country (In Europe)?</li>
+            <li>Which shoe brand made me the most money?</li>
+            <li>What town is your mom born in?</li>
+            <li>Which campus was feature in Black Panther: Wakanda Forever?</li>
+            <li>China Garden is giving away free ___ to customer this year.</li>
+            <li>What car brand does my dad drive?</li>
+            <li>What year was I born?</li>
+            <li>Who gave John Wick his first dog?</li>
+            <li>Anthony wants to go to ___ high school.</li>
+            <li>What is my main major at Purdue University?</li>
+            <li>What is this website being hosted on?</li>
+            <li>What is your mom’s dream car?</li>
         </ol>
     </div>
 
     <script>
-        const correctPassword = "mysecurepassword";
+        const correctPassword = "WKTFLPRPXSNGMCHTHWMGC";
         let errorToggle = true;
 
         function showPasswordPage() {
