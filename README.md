@@ -152,6 +152,8 @@
             if (input === correctPassword) {
                 passwordPage.classList.add("hidden");
                 contentPage.classList.remove("hidden");
+                document.getElementById("questions-section").classList.add("hidden");
+
             } else {
                 errorMessage.textContent = errorToggle ? "Incorrect password. Try again." : "Wrong again LOL";
                 errorToggle = !errorToggle;
