@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +9,8 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -21,6 +19,8 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            width: 80%;
         }
 
         input[type="password"] {
@@ -38,7 +38,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 0.5rem;
+            margin-top: 1rem;
         }
 
         button:hover {
@@ -48,21 +48,27 @@
         .hidden {
             display: none;
         }
+
+        .scroll-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ol {
+            text-align: left;
+            margin: 0 auto;
+            width: 80%;
+            line-height: 1.8;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Introduction Page -->
-        <div id="intro-page">
-            <h2>Merry Christmas!</h2>
-            <p>I have your present but it will take some effort.</p>
-            <p>Are you ready?</p>
-            <button onclick="showPasswordPage()">Yes</button>
-            <button onclick="notReady()">No</button>
-        </div>
-
-        <!-- Password Page -->
-        <div id="password-page" class="hidden">
+        <div id="password-page">
             <h2>Password Protected</h2>
             <p>Please enter the password to access the next screen.</p>
             <input type="password" id="password-input" placeholder="Enter password">
@@ -70,38 +76,44 @@
             <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
         </div>
 
-        <!-- Not Ready Page -->
-        <div id="not-ready-page" class="hidden">
-            <h2>Take your time!</h2>
-            <p>Come back when you're ready for the challenge.</p>
-            <button onclick="goBackToIntro()">Back</button>
-        </div>
-
-        <!-- Success Page -->
         <div id="content-page" class="hidden">
             <h2>Congratulations!</h2>
             <p>You have successfully accessed the page.</p>
         </div>
     </div>
 
+    <!-- Scrollable Section with Questions -->
+    <div class="scroll-container">
+        <h2>The password is 21 characters</h2>
+        <p>Below are 21 questions and the first letter of each answer is one part of the password:</p>
+        <ol>
+            <li>What is the capital of France?</li>
+            <li>Who wrote "To Kill a Mockingbird"?</li>
+            <li>What is the chemical symbol for Gold?</li>
+            <li>Which planet is known as the Red Planet?</li>
+            <li>What is the largest mammal in the world?</li>
+            <li>What language is primarily spoken in Brazil?</li>
+            <li>Who painted the Mona Lisa?</li>
+            <li>What is the currency of Japan?</li>
+            <li>What is the boiling point of water in Celsius?</li>
+            <li>Which animal is known as the King of the Jungle?</li>
+            <li>What is the smallest prime number?</li>
+            <li>Who discovered gravity?</li>
+            <li>What is the name of the largest ocean?</li>
+            <li>What is the square root of 144?</li>
+            <li>Which country is known as the Land of the Rising Sun?</li>
+            <li>What is the fastest land animal?</li>
+            <li>Who is the author of the Harry Potter series?</li>
+            <li>Which gas do plants primarily take in during photosynthesis?</li>
+            <li>What is the hardest natural substance?</li>
+            <li>What is the main ingredient in guacamole?</li>
+            <li>Which bird is known for its impressive mimicry skills?</li>
+        </ol>
+    </div>
+
     <script>
         const correctPassword = "mysecurepassword";
         let errorToggle = true;
-
-        function showPasswordPage() {
-            document.getElementById("intro-page").classList.add("hidden");
-            document.getElementById("password-page").classList.remove("hidden");
-        }
-
-        function notReady() {
-            document.getElementById("intro-page").classList.add("hidden");
-            document.getElementById("not-ready-page").classList.remove("hidden");
-        }
-
-        function goBackToIntro() {
-            document.getElementById("not-ready-page").classList.add("hidden");
-            document.getElementById("intro-page").classList.remove("hidden");
-        }
 
         function checkPassword() {
             const input = document.getElementById("password-input").value;
@@ -113,7 +125,6 @@
                 passwordPage.classList.add("hidden");
                 contentPage.classList.remove("hidden");
             } else {
-                // Alternate error messages
                 errorMessage.textContent = errorToggle ? "Incorrect password. Try again." : "Wrong again LOL";
                 errorToggle = !errorToggle;
                 errorMessage.style.display = "block";
