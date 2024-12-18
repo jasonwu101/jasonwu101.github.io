@@ -32,7 +32,7 @@
             width: 60%;
         }
 
-        input[type="password"] {
+        input[type="WKTFLPRPXSNGMCHTHWMGC"] {
             padding: 0.5rem;
             font-size: 1rem;
             margin: 1rem 0;
