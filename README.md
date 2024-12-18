@@ -53,14 +53,14 @@
     <div class="container">
         <div id="password-page">
             <h2>Password Protected</h2>
-            <p>Please enter the password to access the next screen:</p>
+            <p>Please enter the password to access the next screen. </p>
             <input type="password" id="password-input" placeholder="Enter password">
             <button onclick="checkPassword()">Submit</button>
             <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
         </div>
 
         <div id="content-page" class="hidden">
-            <h2>Welcome to the Protected Page</h2>
+            <h2>Congrations yoou finally figured out the password. </h2>
             <p>You have successfully accessed the page.</p>
         </div>
     </div>
