@@ -47,7 +47,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         button:hover {
@@ -59,7 +59,7 @@
         }
 
         .scroll-container {
-            margin-top: 5rem;
+            margin-top: 7rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
