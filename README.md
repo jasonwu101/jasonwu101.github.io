@@ -53,7 +53,7 @@
     <div class="container">
         <div id="password-page">
             <h2>Password Protected</h2>
-            <p>Please enter the password to access the page:</p>
+            <p>Please enter the password to access the next screen:</p>
             <input type="password" id="password-input" placeholder="Enter password">
             <button onclick="checkPassword()">Submit</button>
             <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
@@ -67,6 +67,7 @@
 
     <script>
         const correctPassword = "mysecurepassword";
+        let errorToggle = true;
 
         function checkPassword() {
             const input = document.getElementById("password-input").value;
@@ -78,6 +79,9 @@
                 passwordPage.classList.add("hidden");
                 contentPage.classList.remove("hidden");
             } else {
+                // Alternate error messages
+                errorMessage.textContent = errorToggle ? "Incorrect password. Try again." : "Wrong again LOL";
+                errorToggle = !errorToggle;
                 errorMessage.style.display = "block";
             }
         }
