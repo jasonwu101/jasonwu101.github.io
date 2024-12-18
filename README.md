@@ -66,7 +66,7 @@
     </div>
 
     <script>
-        const correctPassword = "mysecurepassword";
+        const correctPassword = "password";
         let errorToggle = true;
 
         function checkPassword() {
