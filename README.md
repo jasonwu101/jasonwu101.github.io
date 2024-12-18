@@ -1,88 +1,86 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
+    <title>Password Protected Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f9;
             color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
-            padding: 0.5rem 0;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
+        .container {
+            text-align: center;
+            background: #fff;
             padding: 2rem;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
-            text-align: center;
+        input[type="password"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin: 1rem 0;
+            width: 80%;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
             background-color: #333;
             color: #fff;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My GitHub Website</h1>
-    </header>
-    
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+        <div id="password-page">
+            <h2>Password Protected</h2>
+            <p>Please enter the password to access the page:</p>
+            <input type="password" id="password-input" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+            <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
+        </div>
 
-    <div class="content">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Jason Wu, a junior at Purdue University majoring in Marketing and General Management. Welcome to my personal website!</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here, I'll showcase some of my favorite projects and case studies.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me via LinkedIn or email.</p>
-        </section>
+        <div id="content-page" class="hidden">
+            <h2>Welcome to the Protected Page</h2>
+            <p>You have successfully accessed the page.</p>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Jason Wu. All rights reserved.</p>
-    </footer>
+    <script>
+        const correctPassword = "mysecurepassword";
+
+        function checkPassword() {
+            const input = document.getElementById("password-input").value;
+            const errorMessage = document.getElementById("error-message");
+            const passwordPage = document.getElementById("password-page");
+            const contentPage = document.getElementById("content-page");
+
+            if (input === correctPassword) {
+                passwordPage.classList.add("hidden");
+                contentPage.classList.remove("hidden");
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
