@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +21,16 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 2rem auto;
             width: 80%;
+        }
+
+        .intro-container {
+            margin: 4rem auto;
+            text-align: center;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
         }
 
         input[type="password"] {
@@ -49,8 +60,8 @@
         }
 
         .scroll-container {
-            margin-top: 2rem;
-            padding: 1.5rem;
+            margin-top: 5rem;
+            padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -66,23 +77,32 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="password-page">
-            <h2>Password Protected</h2>
-            <p>Please enter the password to access the next screen.</p>
-            <input type="password" id="password-input" placeholder="Enter password">
-            <button onclick="checkPassword()">Submit</button>
-            <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
-        </div>
+    <!-- Introduction Page -->
+    <div id="intro-page" class="intro-container">
+        <h2>Merry Christmas!</h2>
+        <p>I have your present but it will take some effort.</p>
+        <p>Are you ready?</p>
+        <button onclick="showPasswordPage()">Yes</button>
+        <button onclick="notReady()">No</button>
+    </div>
 
-        <div id="content-page" class="hidden">
-            <h2>Congratulations!</h2>
-            <p>You have successfully accessed the page.</p>
-        </div>
+    <!-- Password Page -->
+    <div class="container hidden" id="password-page">
+        <h2>Password Protected</h2>
+        <p>Please enter the password to access the next screen.</p>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
+    </div>
+
+    <!-- Success Page -->
+    <div id="content-page" class="container hidden">
+        <h2>Congratulations!</h2>
+        <p>You have successfully accessed the page.</p>
     </div>
 
     <!-- Scrollable Section with Questions -->
-    <div class="scroll-container">
+    <div class="scroll-container hidden" id="questions-section">
         <h2>The password is 21 characters</h2>
         <p>Below are 21 questions and the first letter of each answer is one part of the password:</p>
         <ol>
@@ -113,6 +133,16 @@
     <script>
         const correctPassword = "mysecurepassword";
         let errorToggle = true;
+
+        function showPasswordPage() {
+            document.getElementById("intro-page").classList.add("hidden");
+            document.getElementById("password-page").classList.remove("hidden");
+            document.getElementById("questions-section").classList.remove("hidden");
+        }
+
+        function notReady() {
+            alert("Take your time and come back when you are ready!");
+        }
 
         function checkPassword() {
             const input = document.getElementById("password-input").value;
