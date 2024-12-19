@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -50,10 +51,10 @@
         button:hover {
             background-color: #555;
         }
-        
-    #password-page {
-    margin-bottom: 6rem; /* Adjust to the desired space */
-    }
+
+        #password-page {
+            margin-bottom: 6rem; /* Adjust to the desired space */
+        }
 
         .scroll-container {
             margin-top: 1rem;
@@ -101,7 +102,9 @@
         <p>Please enter the password to access the next screen.</p>
         <input type="password" id="password-input" placeholder="Enter password" aria-label="Password Input">
         <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red; display: none;" aria-live="polite"></p>
+        <p id="error-message-1" style="color: red; display: none;" aria-live="polite"></p>
+        <p id="error-message-2" style="color: red; display: none;" aria-live="polite"></p>
+        <p id="error-message-3" style="color: red; display: none;" aria-live="polite"></p>
     </div>
 
     <!-- Success Page -->
@@ -141,7 +144,7 @@
 
     <script>
         const correctPassword = "WKTFLPRPXSNGMCHTHWMGC"; // Store password securely on the server for production.
-        let errorToggle = true;
+        let errorIndex = 0; // Tracks the current error message
 
         function showPasswordPage() {
             document.getElementById("intro-page").classList.add("hidden");
@@ -155,18 +158,32 @@
 
         function checkPassword() {
             const input = document.getElementById("password-input").value;
-            const errorMessage = document.getElementById("error-message");
+            const errorMessages = [
+                { id: "error-message-1", text: "Incorrect password. Try again." },
+                { id: "error-message-2", text: "Wrong again LOL." },
+                { id: "error-message-3", text: "Did you type in all CAPS?" }
+            ];
             const passwordPage = document.getElementById("password-page");
             const contentPage = document.getElementById("content-page");
+
+            // Hide all error messages
+            errorMessages.forEach(msg => {
+                document.getElementById(msg.id).style.display = "none";
+            });
 
             if (input === correctPassword) {
                 passwordPage.classList.add("hidden");
                 contentPage.classList.remove("hidden");
                 document.getElementById("questions-section").classList.add("hidden");
             } else {
-                errorMessage.textContent = errorToggle ? "Incorrect password. Try again." : "Wrong again LOL";
-                errorToggle = !errorToggle;
-                errorMessage.style.display = "block";
+                // Show the current error message
+                const currentMessage = errorMessages[errorIndex];
+                const errorElement = document.getElementById(currentMessage.id);
+                errorElement.textContent = currentMessage.text;
+                errorElement.style.display = "block";
+
+                // Move to the next error message
+                errorIndex = (errorIndex + 1) % errorMessages.length;
             }
         }
     </script>
