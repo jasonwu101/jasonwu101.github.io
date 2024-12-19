@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,23 +21,20 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 2rem auto;
             width: 80%;
+            max-width: 500px;
         }
 
-        .intro-container {
-            margin: 4rem auto;
-            text-align: center;
-            background: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 60%;
+        .hidden {
+            display: none;
         }
 
-        input[type="WKTFLPRPXSNGMCHTHWMGC"] {
+        input[type="password"] {
             padding: 0.5rem;
             font-size: 1rem;
             margin: 1rem 0;
-            width: 80%;
+            width: calc(100% - 2rem);
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         button {
@@ -54,30 +52,39 @@
             background-color: #555;
         }
 
-        .hidden {
-            display: none;
-        }
-
         .scroll-container {
-            margin-top: 13rem;
+            margin-top: 1rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+            overflow-y: auto;
         }
 
         ol {
             text-align: left;
             margin: 0 auto;
-            width: 80%;
             line-height: 1.8;
+            padding-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .scroll-container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Introduction Page -->
-    <div id="intro-page" class="intro-container">
+    <div id="intro-page" class="container">
         <h2>Merry Christmas!</h2>
         <p>I have your present but it will take some effort.</p>
         <p>Are you ready?</p>
@@ -89,9 +96,9 @@
     <div class="container hidden" id="password-page">
         <h2>Password Protected</h2>
         <p>Please enter the password to access the next screen.</p>
-        <input type="password" id="password-input" placeholder="Enter password">
+        <input type="password" id="password-input" placeholder="Enter password" aria-label="Password Input">
         <button onclick="checkPassword()">Submit</button>
-        <p id="error-message" style="color: red; display: none;">Incorrect password. Try again.</p>
+        <p id="error-message" style="color: red; display: none;" aria-live="polite"></p>
     </div>
 
     <!-- Success Page -->
@@ -130,7 +137,7 @@
     </div>
 
     <script>
-        const correctPassword = "WKTFLPRPXSNGMCHTHWMGC";
+        const correctPassword = "WKTFLPRPXSNGMCHTHWMGC"; // Store password securely on the server for production.
         let errorToggle = true;
 
         function showPasswordPage() {
@@ -153,7 +160,6 @@
                 passwordPage.classList.add("hidden");
                 contentPage.classList.remove("hidden");
                 document.getElementById("questions-section").classList.add("hidden");
-
             } else {
                 errorMessage.textContent = errorToggle ? "Incorrect password. Try again." : "Wrong again LOL";
                 errorToggle = !errorToggle;
