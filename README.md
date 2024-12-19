@@ -52,7 +52,7 @@
         }
 
         .scroll-container {
-            margin-top: 8rem;
+            margin-top: 20rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
@@ -84,7 +84,7 @@
 <body>
     <!-- Introduction Page -->
     <div id="intro-page" class="container">
-        <h2>Merry Christmas!</h2>
+        <h2>Merry Christmas lol!</h2>
         <p>I have your present but it will take some effort.</p>
         <p>Are you ready?</p>
         <button onclick="showPasswordPage()">Yes</button>
