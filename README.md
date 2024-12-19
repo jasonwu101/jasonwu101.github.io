@@ -52,7 +52,7 @@
         }
         
     #password-page {
-    margin-bottom: 3rem; /* Adjust to the desired space */
+    margin-bottom: 6rem; /* Adjust to the desired space */
     }
 
         .scroll-container {
