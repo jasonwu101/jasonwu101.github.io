@@ -52,7 +52,7 @@
         }
 
         .scroll-container {
-            margin-top: 4rem;
+            margin-top: 8rem;
             padding: 2rem;
             background: #fff;
             border: 1px solid #ddd;
