@@ -50,6 +50,10 @@
         button:hover {
             background-color: #555;
         }
+        
+    #password-page {
+    margin-bottom: 3rem; /* Adjust to the desired space */
+    }
 
         .scroll-container {
             margin-top: 1rem;
