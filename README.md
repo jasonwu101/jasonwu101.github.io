@@ -103,7 +103,7 @@
     <!-- Scrollable Section with Questions -->
     <div class="scroll-container hidden" id="questions-section">
         <h2>The password is 21 characters</h2>
-        <p>Below are 21 questions and the first letter of each answer is one part of the password in alphabetical order. </p>
+        <p>Below are 21 questions and the first letter of each answer is one part of the password in numerical order. </p>
         <ol>
             <li>If someone buys 10 BTC at once they are called a ___ ?</li>
             <li>What animal do most people think of when they hear Australia?</li>
