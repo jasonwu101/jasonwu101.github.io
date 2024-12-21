@@ -1,4 +1,3 @@
-<!
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -123,6 +122,7 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
+        <p>The pin is 4121.</p>
         <p id="easter-egg" onclick="revealEasterEgg()">Hover over this text to reveal the Easter egg!</p>
         <span id="hidden-number">4111</span>
     </div>
