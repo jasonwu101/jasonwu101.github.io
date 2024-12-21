@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -122,7 +123,7 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
-        <p id="easter-egg" onclick="revealEasterEgg()">Hover and click me!</p>
+        <p id="easter-egg" onmouseover="makeEasterEggVisible()" onclick="revealEasterEgg()">Hover over this text to reveal the Easter egg!</p>
         <span id="hidden-number">4111</span>
     </div>
 
@@ -208,9 +209,10 @@
         }
 
         // Make the Easter egg visible on hover
-        document.getElementById("easter-egg").addEventListener("mouseover", function () {
-            this.style.visibility = "visible";
-        });
+        function makeEasterEggVisible() {
+            const easterEgg = document.getElementById("easter-egg");
+            easterEgg.style.visibility = "visible";
+        }
     </script>
 </body>
 </html>
