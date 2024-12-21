@@ -83,6 +83,18 @@
                 width: 90%;
             }
         }
+
+        #easter-egg {
+            visibility: hidden;
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        #hidden-number {
+            display: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -110,6 +122,8 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
+        <p id="easter-egg" onclick="revealEasterEgg()">Hover and click me!</p>
+        <span id="hidden-number">4111</span>
     </div>
 
     <!-- Scrollable Section with Questions -->
@@ -185,6 +199,18 @@
                 errorIndex = (errorIndex + 1) % errorMessages.length;
             }
         }
+
+        // Easter Egg reveal function
+        function revealEasterEgg() {
+            const hiddenNumber = document.getElementById("hidden-number");
+            hiddenNumber.style.display = "inline"; // Show the hidden number when clicked
+            alert("You found the Easter egg: 4111!");
+        }
+
+        // Make the Easter egg visible on hover
+        document.getElementById("easter-egg").addEventListener("mouseover", function () {
+            this.style.visibility = "visible";
+        });
     </script>
 </body>
 </html>
