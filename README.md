@@ -45,7 +45,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 0.5rem;
+            margin-top: 1rem;
         }
 
         button:hover {
@@ -84,17 +84,6 @@
                 width: 90%;
             }
         }
-
-        .buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .correct {
-            background-color: green;
-        }
     </style>
 </head>
 <body>
@@ -122,18 +111,6 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
-        <p>Select the correct button to reveal the PIN:</p>
-        <div class="buttons-container">
-            <button onclick="incorrectChoice()">Button 1</button>
-            <button onclick="incorrectChoice()">Button 2</button>
-            <button onclick="correctChoice()" class="correct">Button 3</button>
-            <button onclick="incorrectChoice()">Button 4</button>
-            <button onclick="incorrectChoice()">Button 5</button>
-            <button onclick="incorrectChoice()">Button 6</button>
-            <button onclick="incorrectChoice()">Button 7</button>
-            <button onclick="incorrectChoice()">Button 8</button>
-        </div>
-        <p id="pin-number" style="display: none; margin-top: 1rem; font-size: 1.5rem; color: green;">PIN: 1234</p>
     </div>
 
     <!-- Scrollable Section with Questions -->
@@ -208,14 +185,6 @@
                 // Move to the next error message
                 errorIndex = (errorIndex + 1) % errorMessages.length;
             }
-        }
-
-        function correctChoice() {
-            document.getElementById("pin-number").style.display = "block";
-        }
-
-        function incorrectChoice() {
-            alert("Wrong button! Try again.");
         }
     </script>
 </body>
