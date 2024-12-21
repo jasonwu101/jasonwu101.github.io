@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,7 +86,7 @@
         }
 
         #easter-egg {
-            visibility: hidden;
+            display: none; /* Use display: none initially */
             cursor: pointer;
             font-size: 1.5rem;
             margin-top: 2rem;
@@ -123,7 +123,7 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
-        <p id="easter-egg" onmouseover="makeEasterEggVisible()" onclick="revealEasterEgg()">Hover over this text to reveal the Easter egg!</p>
+        <p id="easter-egg" onclick="revealEasterEgg()">Hover over this text to reveal the Easter egg!</p>
         <span id="hidden-number">4111</span>
     </div>
 
@@ -209,10 +209,9 @@
         }
 
         // Make the Easter egg visible on hover
-        function makeEasterEggVisible() {
-            const easterEgg = document.getElementById("easter-egg");
-            easterEgg.style.visibility = "visible";
-        }
+        document.getElementById("easter-egg").addEventListener("mouseover", function () {
+            this.style.display = "block";
+        });
     </script>
 </body>
 </html>
