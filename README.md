@@ -110,6 +110,9 @@
     <div id="content-page" class="container hidden">
         <h2>Congratulations!</h2>
         <p>You have successfully accessed the page.</p>
+        <p>JZ7M6FT0D66KPWR</p>
+        <p>FHQCEHLDJKYF9NG</p>
+    
     </div>
 
     <!-- Scrollable Section with Questions -->
