@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-  <h1>💕 We've been dating for:</h1>
+  <h1>We've been dating for:</h1>
   <div id="days">...</div>
   <div class="heart">❤️</div>
 
