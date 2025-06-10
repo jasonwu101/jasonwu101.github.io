@@ -46,8 +46,12 @@
   <div id="days">...</div>
   <div class="heart">❤️</div>
 
-  <script>
+ <script>
     const startDate = new Date("2025-03-08");
     const today = new Date();
     const oneDay = 1000 * 60 * 60 * 24;
-    const diffDays = Math.floor((today - startDa
+    const diffDays = Math.floor((today - startDate) / oneDay);
+    document.getElementById("days").textContent = `${diffDays} days`;
+  </script>
+</body>
+</html>
