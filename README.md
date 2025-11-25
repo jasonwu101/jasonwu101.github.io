@@ -42,7 +42,7 @@
   </style>
 </head>
 <body>
-  <h1>Juri + Jason:</h1>
+  <h1>Juri + Jason</h1>
   <div id="days"></div>
   <div id="months"></div>
   <div class="heart">❤️</div>
