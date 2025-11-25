@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -22,8 +23,8 @@
       margin-bottom: 0.5rem;
     }
 
-    #days {
-      font-size: 2.5rem;
+    #days, #months {
+      font-size: 2.2rem;
       font-weight: bold;
       margin: 0.2rem 0;
     }
@@ -43,15 +44,29 @@
 </head>
 <body>
   <h1>We've been dating for:</h1>
-  <div id="days">...</div>
+  <div id="days"></div>
+  <div id="months"></div>
   <div class="heart">❤️</div>
 
- <script>
+  <script>
     const startDate = new Date("2025-03-08");
     const today = new Date();
+
     const oneDay = 1000 * 60 * 60 * 24;
     const diffDays = Math.floor((today - startDate) / oneDay);
+
+    // Months counter (approximate: actual month diff based on calendar)
+    let diffMonths =
+      (today.getFullYear() - startDate.getFullYear()) * 12 +
+      (today.getMonth() - startDate.getMonth());
+
+    // Adjust if the day of the month hasn't been reached yet
+    if (today.getDate() < startDate.getDate()) {
+      diffMonths--;
+    }
+
     document.getElementById("days").textContent = `${diffDays} days`;
+    document.getElementById("months").textContent = `${diffMonths} months`;
   </script>
 </body>
 </html>
