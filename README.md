@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -43,30 +42,27 @@
   </style>
 </head>
 <body>
-  <h1>We've been dating for:</h1>
+  <h1>Juri + Jason:</h1>
   <div id="days"></div>
   <div id="months"></div>
   <div class="heart">❤️</div>
 
   <script>
     const startDate = new Date("2025-03-08");
-    const today = new Date();
+const today = new Date();
 
-    const oneDay = 1000 * 60 * 60 * 24;
-    const diffDays = Math.floor((today - startDate) / oneDay);
+const oneDay = 1000 * 60 * 60 * 24;
+const diffDays = Math.floor((today - startDate) / oneDay);
 
-    // Months counter (approximate: actual month diff based on calendar)
-    let diffMonths =
-      (today.getFullYear() - startDate.getFullYear()) * 12 +
-      (today.getMonth() - startDate.getMonth());
+// average month length (astronomical standard)
+const avgDaysPerMonth = 30.4375;
 
-    // Adjust if the day of the month hasn't been reached yet
-    if (today.getDate() < startDate.getDate()) {
-      diffMonths--;
-    }
+// months with decimals to the hundredth place
+const diffMonthsDecimal = (diffDays / avgDaysPerMonth).toFixed(2);
 
-    document.getElementById("days").textContent = `${diffDays} days`;
-    document.getElementById("months").textContent = `${diffMonths} months`;
+document.getElementById("days").textContent = `${diffDays} days`;
+document.getElementById("months").textContent = `${diffMonthsDecimal} months`;
+
   </script>
 </body>
 </html>
